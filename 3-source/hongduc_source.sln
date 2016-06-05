@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "hongduc_source", "hongduc_source\", "{76880DAB-7AD1-45EE-B14D-7320B3FC4296}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/hongduc_source"
+		Debug.AspNetCompiler.PhysicalPath = "hongduc_source\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\hongduc_source\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/hongduc_source"
+		Release.AspNetCompiler.PhysicalPath = "hongduc_source\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\hongduc_source\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1497"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76880DAB-7AD1-45EE-B14D-7320B3FC4296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76880DAB-7AD1-45EE-B14D-7320B3FC4296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
