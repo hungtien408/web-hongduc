@@ -12,7 +12,7 @@
                         EnableModelValidation="True">
                         <ItemTemplate>
                             <div class="aside-title">
-                                <a href="javascript:void(0);">
+                                <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'>
                                     <%# Eval("ArticleCategoryName") %></a>
                             </div>
                             <div class="aside-list">
@@ -20,7 +20,7 @@
                                 <asp:ListView ID="lstHauCanCategorySub" runat="server" DataSourceID="odsHauCanCategorySub"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li><a href="javascript:void(0);"><span class="fa fa-circle"></span>
+                                        <li><a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'><span class="fa fa-circle"></span>
                                             <%# Eval("ArticleCategoryName") %></a>
                                             <asp:HiddenField ID="hdnCategorySubID" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                             <asp:ListView ID="lstHauCan" runat="server" DataSourceID="odsHauCan" EnableModelValidation="True">
@@ -112,6 +112,27 @@
                 TypeName="TLLib.Article">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="ArticleID" QueryStringField="hc" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+            <asp:ListView ID="lstHauCanCategoryDetails" runat="server" DataSourceID="odsHauCanCategoryDetails"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <div class="colContent">
+                        <h3>
+                            <%# Eval("ArticleCategoryName") %></h3>
+                        <div class="content-tb">
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                        </div>
+                    </div>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <span runat="server" id="itemPlaceholder" />
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsHauCanCategoryDetails" runat="server" SelectMethod="ArticleCategorySelectOne"
+                TypeName="TLLib.ArticleCategory">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="ArticleCategoryID" QueryStringField="hci" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
         </div>

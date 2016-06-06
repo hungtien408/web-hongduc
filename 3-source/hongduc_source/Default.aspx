@@ -49,102 +49,35 @@
         <div class="container">
             <div class="wapper-content">
                 <div class="row rownone">
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img1.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Vận chuyển Đường Hàng Không</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
+                    <asp:ListView ID="lstLogisticsCategory" runat="server" DataSourceID="odsLogisticsCategory"
+                        EnableModelValidation="True">
+                        <ItemTemplate>
+                            <div class="col-sm-3 col-xs-6 element-item">
+                                <div class="product-box product-pos scale-animate">
+                                    <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>' class="product-img"><span class="box-img fullbox-img cover-img">
+                                        <img class="hideo"  alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/articlecategory/" + Eval("ImageName") : "~/assets/images/img1.jpg" %>' runat="server" /></span></a>
+                                    <div class="pro-name">
+                                        <div class="product-name">
+                                            <%# Eval("ArticleCategoryName").ToString().Substring(0, 1).Equals("-") ? Eval("ArticleCategoryName").ToString().Substring(1) : Eval("ArticleCategoryName") %></div>
+                                        <div class="product-view">
+                                            <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'>XEM CHI TIẾT</a></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img2.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Vận chuyển Đường Biển</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img3.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Vận chuyển Đường Bộ</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img4.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Vận chuyển Đường Sắt</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img5.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Chuyển phát nhanh</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img6.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Dịch vụ dọn chuyển</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img7.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Dịch vụ kho bãi</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-xs-6 element-item">
-                        <div class="product-box product-pos scale-animate">
-                            <a href="#" class="product-img"><span class="box-img fullbox-img cover-img">
-                                <img class="hideo" src="assets/images/img8.jpg" /></span></a>
-                            <div class="pro-name">
-                                <div class="product-name">
-                                    Kinh doanh máy móc thiết bị</div>
-                                <div class="product-view">
-                                    <a href="#">XEM CHI TIẾT</a></div>
-                            </div>
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <span runat="server" id="itemPlaceholder" />
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsLogisticsCategory" runat="server" SelectMethod="ArticleCategorySelectAll"
+                        TypeName="TLLib.ArticleCategory">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="6" Name="parentID" Type="Int32" />
+                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
+                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
                 </div>
             </div>
         </div>

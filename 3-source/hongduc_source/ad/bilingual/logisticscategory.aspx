@@ -207,7 +207,7 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="IsShowOnHomePage" HeaderText="Xem trên trang chủ" Visible="False">
+                    <asp:GridTemplateColumn DataField="IsShowOnHomePage" HeaderText="Xem trên trang chủ">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" Checked='<%# Eval("IsShowOnHomePage") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnHomePage"))%>'
                                 CssClass="checkbox" />
@@ -219,12 +219,14 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Ảnh" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Ảnh">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
-                                <a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
+                                <%--<a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
                                     <img alt="" src="../assets/images/photo.png" />
-                                </a>
+                                </a>--%>
+                                <img id="Img1" alt="" src='<%# "~/res/articlecategory/" + Eval("ImageName") %>' width="80" runat="server"
+                                    visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImage" runat="server" CommandName="DeleteImage" OnClientClick="return confirm('Xóa ảnh này ?')"
                                     rel='<%#  Eval("ArticleCategoryID") + "#" + Eval("ImageName") %>'>
                             <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />
@@ -242,7 +244,7 @@
                             <h3 class="searchTitle">
                                 Thông Tin Danh Mục Hậu Cần</h3>
                             <table class="search">
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Ảnh đại diện
                                     </td>
@@ -253,6 +255,7 @@
                                             ControlObjectsVisibility="None" Culture="vi-VN" InputSize="69" Language="vi-VN" />
                                         <asp:CustomValidator ID="CustomValidator1" runat="server" ClientValidationFunction="validateRadUpload"
                                             Display="Dynamic" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"></asp:CustomValidator>
+                                        <span class="required">(Kích thước 278px x 188px)</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -331,7 +334,7 @@
                                         </asp:RadEditor>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Nội dung
                                     </td>
@@ -411,7 +414,7 @@
                                         </asp:RadEditor>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Nội dung
                                     </td>

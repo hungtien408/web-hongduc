@@ -9,6 +9,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
     <link href="assets/styles/font-awesome.min.css" rel="stylesheet" />
     <link href="assets/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/styles/uniform-base.css" rel="stylesheet" type="text/css" />
@@ -54,6 +55,8 @@
             $('#menu li li a[href$="' + page + '"]').parents("li").addClass("active");
             $('.menu-list li').removeClass("active");
             $('.menu-list li a[href$="' + page + '"]').parents("li").addClass("active");
+            var value = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+            $('#menu li li a[href$="' + value + '"]').parents("li").addClass("active");
         }
     </script>
 </head>
@@ -95,17 +98,17 @@
                         <ul id="menu" class="desktop-992">
                             <li class="home"><a href="Default.aspx"><span class="fa fa-home"></span></a></li>
                             <li><a href="gioi-thieu.aspx">thông tin công ty</a></li>
-                            <li><a href="hau-can.aspx">Hậu cần</a>
+                            <li><a href="javascript:void(0);">Hậu cần</a>
                                 <asp:ListView ID="lstLogisticsCategory" runat="server" DataSourceID="odsLogisticsCategory"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li class="width50 sub1"><a href="javascript:void(0);">
+                                        <li class="width50 sub1"><a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'>
                                             <%# Eval("ArticleCategoryName") %></a>
                                             <asp:HiddenField ID="hdnLogisticsCategorySub" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                             <asp:ListView ID="lstLogisticsCategorySub" runat="server" DataSourceID="odsLogisticsCategorySub"
                                                 EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href="javascript:void(0);"><%# Eval("ArticleCategoryName") %></a>
+                                                    <a class="sub2" href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'><%# Eval("ArticleCategoryName") %></a>
                                                     <asp:HiddenField ID="hdnLogisticsCategory" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                                     <asp:ListView ID="lstLogistics" runat="server" DataSourceID="odsLogistics" EnableModelValidation="True">
                                                         <ItemTemplate>
@@ -236,7 +239,7 @@
                                             <asp:ListView ID="lstCommerceCategory" runat="server" DataSourceID="odsCommerceCategory"
                                                 EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href="javascript:void(0);">
+                                                    <a class="sub2" href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-tmi-" + Eval("ArticleCategoryID") + ".aspx" %>'>
                                                         <%# Eval("ArticleCategoryName") %></a>
                                                     <asp:HiddenField ID="hdnCommerceCategory" Value='<%# Eval("ArticleCategoryID") %>'
                                                         runat="server" />

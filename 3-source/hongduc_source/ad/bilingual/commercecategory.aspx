@@ -331,7 +331,7 @@
                                         </asp:RadEditor>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Nội dung
                                     </td>
@@ -411,7 +411,7 @@
                                         </asp:RadEditor>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Nội dung
                                     </td>

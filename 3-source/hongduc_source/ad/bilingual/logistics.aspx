@@ -323,7 +323,7 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Xem trên trang chủ" SortExpression="IsShowOnHomePage" Visible="False">
+                    <asp:GridTemplateColumn HeaderText="Xem trên trang chủ" SortExpression="IsShowOnHomePage">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsShowOnHomePage").ToString()) ? false : Eval("IsShowOnHomePage") %>'
                                 CssClass="checkbox" />
@@ -381,7 +381,7 @@
                                             Culture="vi-VN" Language="vi-VN" InputSize="69" AllowedFileExtensions=".jpg,.jpeg,.gif,.png" />
                                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"
                                             ClientValidationFunction="validateRadUpload" Display="Dynamic"></asp:CustomValidator>
-                                        <span class="required">(Kích thước 494px x 298px)</span>
+                                        <span class="required">(Kích thước 278px x 188px)</span>
                                     </td>
                                 </tr>
                                 <tr>

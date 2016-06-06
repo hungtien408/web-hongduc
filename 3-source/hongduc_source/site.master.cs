@@ -23,7 +23,7 @@ public partial class site : System.Web.UI.MasterPage
 
             if (page.Contains("san-pham.aspx?ci=") || page.Contains("chi-tiet-san-pham.aspx?pi="))
                 activePage = "san-pham.aspx";
-            else if (page.Contains("chi-tiet-tin-tuc.aspx?id="))
+            else if (page.Contains("-tt-"))
                 activePage = "tin-tuc.aspx";
             else if (!page.EndsWith("default.aspx"))
                 activePage = Path.GetFileName(page);

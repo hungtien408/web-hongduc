@@ -12,7 +12,7 @@
                         EnableModelValidation="True">
                         <ItemTemplate>
                             <div class="aside-title">
-                                <a href="javascript:void(0);">
+                                <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-tmi-" + Eval("ArticleCategoryID") + ".aspx" %>'>
                                     <%# Eval("ArticleCategoryName") %></a>
                             </div>
                             <div class="aside-list">
@@ -88,6 +88,27 @@
                 TypeName="TLLib.Article">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="ArticleID" QueryStringField="tm" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
+            <asp:ListView ID="lstExpressCateogryDetails" runat="server" DataSourceID="odsExpressCateogryDetails"
+                EnableModelValidation="True">
+                <ItemTemplate>
+                    <div class="colContent">
+                        <h3>
+                            <%# Eval("ArticleCategoryName") %></h3>
+                        <div class="content-tb">
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                        </div>
+                    </div>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <span runat="server" id="itemPlaceholder" />
+                </LayoutTemplate>
+            </asp:ListView>
+            <asp:ObjectDataSource ID="odsExpressCateogryDetails" runat="server" SelectMethod="ArticleCategorySelectOne"
+                TypeName="TLLib.ArticleCategory">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="ArticleCategoryID" QueryStringField="tmi" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
         </div>
