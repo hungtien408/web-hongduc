@@ -102,7 +102,7 @@ hr {
     }
     .hotline span {
         color:#cc0000;
-        font-size:36px;
+        font-size:32px;
         font-weight:700;
         padding:0 30px 0 20px;
         letter-spacing:-3px;
@@ -263,7 +263,7 @@ hr {
 		}
    
     #menu > li > ul {
-        left: 0;
+        left: -40px;
         top: 100%;
         position: absolute;
         z-index: 1;
