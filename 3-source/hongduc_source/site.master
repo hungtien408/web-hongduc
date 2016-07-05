@@ -102,13 +102,13 @@
                                 <asp:ListView ID="lstLogisticsCategory" runat="server" DataSourceID="odsLogisticsCategory"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li class="width50 sub1"><a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                                        <li class="width50 sub1"><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'>
                                             <%# Eval("ArticleCategoryName") %></a>
                                             <asp:HiddenField ID="hdnLogisticsCategorySub" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                             <asp:ListView ID="lstLogisticsCategorySub" runat="server" DataSourceID="odsLogisticsCategorySub"
                                                 EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'><%# Eval("ArticleCategoryName") %></a>
+                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'><%# Eval("ArticleCategoryName") %></a>
                                                     <asp:HiddenField ID="hdnLogisticsCategory" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                                     <asp:ListView ID="lstLogistics" runat="server" DataSourceID="odsLogistics" EnableModelValidation="True">
                                                         <ItemTemplate>
@@ -184,7 +184,7 @@
                                                 runat="server" />
                                             <asp:ListView ID="lstExpress" runat="server" DataSourceID="odsExpress" EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href='<%# progressTitle(Eval("ArticleTitle")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
+                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitle")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
                                                         <%# Eval("ArticleTitle") %></a>
                                                 </ItemTemplate>
                                                 <LayoutTemplate>

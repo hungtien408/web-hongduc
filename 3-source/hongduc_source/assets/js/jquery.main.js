@@ -55,54 +55,6 @@ function myfunload() {
         fade: true,
         cssEase: 'linear'
     });
-    if ($('#silderProduct').size() == 1) {
-        var silderProduct = $('#silderProduct').imagesLoaded(function () {
-            silderProduct.slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                //cssEase: 'linear',
-                dots: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                prevArrow: $(".control-slider .prev"),
-                nextArrow: $(".control-slider .next"),
-                responsive: [
-                  {
-                      breakpoint: 1200,
-                      settings: {
-                          slidesToShow: 4
-                      }
-                  },
-                  {
-                      breakpoint: 1199,
-                      settings: {
-                          slidesToShow: 3
-                      }
-                  },
-                  {
-                      breakpoint: 639,
-                      settings: {
-                          slidesToShow: 2
-                      }
-                  }
-                  // You can unslick at a given breakpoint now by adding:
-                  // settings: "unslick"
-                  // instead of a settings object
-                ]
-            });
-            sliderParent.textHeight({
-                activetit: true,
-                listcss: [{ cssname: ".product-img" }, { cssname: ".product-name" }],
-                desbool: false,
-                listpos: [{ cssnamepos: ".description", cssheightnum: "3" }],
-                tbrow: false,
-                csstr: ".element-item",
-                max: true
-            });
-        });
-    }
    
     if ($("#sliderDetails").size() == 1) {
         var bigimg = $(".small-img:first").attr("href");

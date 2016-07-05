@@ -12,7 +12,7 @@
                         EnableModelValidation="True">
                         <ItemTemplate>
                             <div class="aside-title">
-                                <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                                <a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx") %>'>
                                     <%# Eval("ArticleCategoryName") %></a>
                             </div>
                             <div class="aside-list">
@@ -20,12 +20,12 @@
                                 <asp:ListView ID="lstHauCanCategorySub" runat="server" DataSourceID="odsHauCanCategorySub"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li><a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'><span class="fa fa-circle"></span>
+                                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx") %>'><span class="fa fa-circle"></span>
                                             <%# Eval("ArticleCategoryName") %></a>
                                             <asp:HiddenField ID="hdnCategorySubID" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                             <asp:ListView ID="lstHauCan" runat="server" DataSourceID="odsHauCan" EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <li><a href='<%# progressTitle(Eval("ArticleTitle")) + "-hc-" + Eval("ArticleID") + ".aspx" %>'>
+                                                    <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitle")) + "-hc-" + Eval("ArticleID") + ".aspx" %>'>
                                                         <span class="fa fa-angle-right"></span>
                                                         <%# Eval("ArticleTitle") %></a></li>
                                                 </ItemTemplate>

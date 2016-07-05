@@ -19,7 +19,7 @@
                                 <asp:HiddenField ID="hdnCategoryID" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                 <asp:ListView ID="lstExpress" runat="server" DataSourceID="odsExpress" EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li><a href='<%# progressTitle(Eval("ArticleTitle")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
+                                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitle")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
                                             <span class="fa fa-circle"></span>
                                             <%# Eval("ArticleTitle") %></a> </li>
                                     </ItemTemplate>

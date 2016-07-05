@@ -811,6 +811,7 @@ body .mobilep-right {
      width:100%;
      height:100%;
      margin:15px 0 20px 0;
+     background-size: cover;
 }
 .introduce {
     padding:30px 0 40px 0;
@@ -1228,4 +1229,54 @@ body .mobilep-right {
 }
 .bor-none {
     border-bottom:none;
+}
+/*================goi-hang=================*/
+.formpage {
+    width:70%;
+    margin:0 auto;
+}
+.formpage select {
+    color: #666;
+    font-size:14px;
+    height:28px;
+    width:300px;
+}
+.formpage label {
+    color: #666;
+    display: block;
+    font-size:14px;
+    font-weight:normal;
+}
+.formpage .section {
+    margin-bottom:10px;
+}
+.formpage .maxfield {
+    width:350px;
+}
+.formbutton {
+    background: #666 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    float: left;
+    font-size:14px;
+    padding:5px 10px;
+}
+.formpage textarea {
+    height:100px;
+    }
+    .form-area {
+        width: 350px;
+        height: 100px;
+    }
+.submitbutton {
+    background: #cc0001 none repeat scroll 0 0;
+    margin-left:10px;
+    border: medium none;
+    color: #fff;
+    float: left;
+    font-size:14px;
+    padding:5px 10px;
+}
+.section.end {
+    margin-top: 10px;
 }

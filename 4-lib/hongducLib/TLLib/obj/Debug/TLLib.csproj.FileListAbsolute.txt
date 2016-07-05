@@ -52,3 +52,10 @@ E:\Website\web-hongduc\4-lib\hongducLib\TLLib\bin\Debug\itextsharp.dll
 E:\Website\web-hongduc\4-lib\hongducLib\TLLib\obj\Debug\TLLib.csprojResolveAssemblyReference.cache
 E:\Website\web-hongduc\4-lib\hongducLib\TLLib\obj\Debug\TLLib.dll
 E:\Website\web-hongduc\4-lib\hongducLib\TLLib\obj\Debug\TLLib.pdb
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\bin\Debug\TLLib.dll
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\bin\Debug\TLLib.pdb
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\bin\Debug\itextsharp.dll
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\obj\Debug\TLLib.csprojResolveAssemblyReference.cache
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\obj\Debug\TLLib.dll
+E:\Tien\Website\hongduc\4-lib\hongducLib\TLLib\obj\Debug\TLLib.pdb
