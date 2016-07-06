@@ -13,10 +13,10 @@
                     <div class="slide">
                         <img alt='<%# Eval("FileName") %>' src='<%# !string.IsNullOrEmpty(Eval("FileName").ToString()) ? "~/res/advertisement/" + Eval("FileName") : "~/assets/images/slider1.jpg" %>'
                             runat="server" />
-                        <div class="slide-text">
+                        <%--<div class="slide-text">
                             <p>
                                 DỊCH VỤ VẬN CHUYỂN</p>
-                        </div>
+                        </div>--%>
                         <div class="slide-text1">
                             <p>
                                 <strong>
