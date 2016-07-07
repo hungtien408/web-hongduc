@@ -93,6 +93,7 @@
         </div>
         <div class="col-md-9">
             <div class="formpage">
+                <h3>Gởi hàng</h3>
                 <div class="dropdown section">
                     <label for="Title">
                         Chức danh</label>
@@ -104,9 +105,7 @@
                         </select>--%>
                     <asp:DropDownList ID="dropChucDanh" runat="server">
                         <asp:ListItem Value="Ông">Ông</asp:ListItem>
-                        <asp:ListItem Value="Cô">Cô</asp:ListItem>
                         <asp:ListItem Value="Bà">Bà</asp:ListItem>
-                        <asp:ListItem Value="Tiến sĩ">Tiến sĩ</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="text section">

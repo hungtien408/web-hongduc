@@ -1032,7 +1032,7 @@ body .mobilep-right {
      .aside-list li li a:hover, .aside-list li li .active a, .aside-list li li a:hover > span, .aside-list li li a .active span{
         color:#000;
     }
-.colContent h3 {
+.colContent h3, .formpage h3 {
     font-size:36px;
     font-weight:100;
     padding:0 0 20px 0;
@@ -1232,7 +1232,7 @@ body .mobilep-right {
 }
 /*================goi-hang=================*/
 .formpage {
-    width:70%;
+    width:90%;
     margin:0 auto;
 }
 .formpage select {

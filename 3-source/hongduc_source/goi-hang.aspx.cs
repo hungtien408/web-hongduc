@@ -33,15 +33,17 @@ public partial class goi_hang : System.Web.UI.Page
 
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "thanh.le@hongducexpress.com", "", "Contact HONG DUC EXPRESS", msg, true);
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "hung.nguyen@hongducexpress.com", "", "Contact HONG DUC EXPRESS", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "cc@tranlegroup.com", "", "Contact HONG DUC EXPRESS", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "hungtien408@gmail.com", "", "Contact HONG DUC EXPRESS", msg, true);
         
     }
 
     protected void btSend_Click(object sender, EventArgs e)
     {
-        if (FileUpload1.FileName != null)
+        if (FileUpload1.FileName != "")
         {
             fileName = FileUpload1.FileName;
-            fileName = FileUpload1.FileName!= null ? "hongducexpress_" + DateTime.Now.ToString("ddMMyy") + Guid.NewGuid().GetHashCode().ToString("X").Substring(0, 4) + fileName.Substring(fileName.LastIndexOf(".")) : "";
+            fileName = FileUpload1.FileName != "" ? "hongducexpress_" + DateTime.Now.ToString("ddMMyy") + Guid.NewGuid().GetHashCode().ToString("X").Substring(0, 4) + fileName.Substring(fileName.LastIndexOf(".")) : "";
             string SavePath = Server.MapPath("~/res/fileupload/" + fileName);
             FileUpload1.SaveAs(SavePath);
             if (Page.IsValid)
