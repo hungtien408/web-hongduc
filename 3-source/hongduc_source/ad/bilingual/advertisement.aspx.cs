@@ -163,6 +163,7 @@ public partial class ad_single_advertisement : System.Web.UI.Page
             var dpToDate = (RadDatePicker)row.FindControl("dpToDate");
 
             string strCompanyName = ((TextBox)row.FindControl("txtCompanyName")).Text.Trim();
+            string strCompanyNameEn = ((TextBox)row.FindControl("txtCompanyNameEn")).Text.Trim();
             string strConvertedAdsBannerName = Common.ConvertTitle(strCompanyName);
             string strFileName = FileFileName.UploadedFiles.Count > 0 ? FileFileName.UploadedFiles[0].GetName() : "";
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
@@ -203,6 +204,7 @@ public partial class ad_single_advertisement : System.Web.UI.Page
                     strConvertedAdsBannerName,
                     strAdsCategoryID,
                     strCompanyName,
+                    strCompanyNameEn,
                     strWebsite,
                     strFromDate,
                     strToDate,

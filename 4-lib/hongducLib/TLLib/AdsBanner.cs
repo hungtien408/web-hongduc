@@ -18,6 +18,7 @@ namespace TLLib
             string ConvertedAdsBannerName,
             string AdsCategoryID,
             string CompanyName,
+            string CompanyNameEn,
             string Website,
             string FromDate,
             string ToDate,
@@ -35,6 +36,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@ConvertedAdsBannerName", string.IsNullOrEmpty(ConvertedAdsBannerName) ? dbNULL : (object)ConvertedAdsBannerName);
                 cmd.Parameters.AddWithValue("@AdsCategoryID", string.IsNullOrEmpty(AdsCategoryID) ? dbNULL : (object)AdsCategoryID);
                 cmd.Parameters.AddWithValue("@CompanyName", string.IsNullOrEmpty(CompanyName) ? dbNULL : (object)CompanyName);
+                cmd.Parameters.AddWithValue("@CompanyNameEn", string.IsNullOrEmpty(CompanyNameEn) ? dbNULL : (object)CompanyNameEn);
                 cmd.Parameters.AddWithValue("@Website", string.IsNullOrEmpty(Website) ? dbNULL : (object)(Website.ToLower().StartsWith("http://") ? Website.ToLower() : "http://" + Website.ToLower()));
                 cmd.Parameters.AddWithValue("@FromDate", string.IsNullOrEmpty(FromDate) ? dbNULL : (object)FromDate);
                 cmd.Parameters.AddWithValue("@ToDate", string.IsNullOrEmpty(ToDate) ? dbNULL : (object)ToDate);
@@ -70,6 +72,7 @@ namespace TLLib
             string ConvertedAdsBannerName,
             string AdsCategoryID,
             string CompanyName,
+            string CompanyNameEn,
             string Website,
             string FromDate,
             string ToDate,
@@ -88,6 +91,7 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@ConvertedAdsBannerName", string.IsNullOrEmpty(ConvertedAdsBannerName) ? dbNULL : (object)ConvertedAdsBannerName);
                 cmd.Parameters.AddWithValue("@AdsCategoryID", string.IsNullOrEmpty(AdsCategoryID) ? dbNULL : (object)AdsCategoryID);
                 cmd.Parameters.AddWithValue("@CompanyName", string.IsNullOrEmpty(CompanyName) ? dbNULL : (object)CompanyName);
+                cmd.Parameters.AddWithValue("@CompanyNameEn", string.IsNullOrEmpty(CompanyNameEn) ? dbNULL : (object)CompanyNameEn);
                 cmd.Parameters.AddWithValue("@Website", string.IsNullOrEmpty(Website) ? dbNULL : (object)(Website.ToLower().StartsWith("http://") ? Website.ToLower() : "http://" + Website.ToLower()));
                 cmd.Parameters.AddWithValue("@FromDate", string.IsNullOrEmpty(FromDate) ? dbNULL : (object)FromDate);
                 cmd.Parameters.AddWithValue("@ToDate", string.IsNullOrEmpty(ToDate) ? dbNULL : (object)ToDate);

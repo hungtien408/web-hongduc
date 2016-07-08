@@ -274,6 +274,11 @@
                             <%# Eval("CompanyName")%>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn HeaderText="Banner name(En)" DataField="CompanyNameEn" SortExpression="CompanyNameEn">
+                        <ItemTemplate>
+                            <%# Eval("CompanyNameEn")%>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn HeaderText="Website" DataField="Website" SortExpression="Website" Visible="False">
                         <ItemTemplate>
                             <a href='<%# Eval("Website")%>' target="_blank">
@@ -394,6 +399,15 @@
                                     </td>
                                     <td>
                                         <asp:TextBox ID="txtCompanyName" runat="server" Text='<%# Bind("CompanyName") %>'
+                                            Width="500px"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Banner name (En)
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtCompanyNameEn" runat="server" Text='<%# Bind("CompanyNameEn") %>'
                                             Width="500px"></asp:TextBox>
                                     </td>
                                 </tr>
@@ -533,6 +547,7 @@
             <asp:Parameter Name="ConvertedAdsBannerName" Type="String" />
             <asp:Parameter Name="AdsCategoryID" Type="String" />
             <asp:Parameter Name="CompanyName" Type="String" />
+            <asp:Parameter Name="CompanyNameEn" Type="String" />
             <asp:Parameter Name="Website" Type="String" />
             <asp:Parameter Name="FromDate" Type="String" />
             <asp:Parameter Name="ToDate" Type="String" />

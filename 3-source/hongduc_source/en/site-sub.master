@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/en/site.master" AutoEventWireup="true" CodeFile="site-sub.master.cs" Inherits="site_sub" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="container-bg">
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="pro-row">
+                <div id="silderProduct" class="slider">
+                    <asp:ListView ID="lstParner" runat="server" DataSourceID="odsParner" EnableModelValidation="True">
+                        <ItemTemplate>
+                            <div class="slide">
+                                <div class="product-box">
+                                    <a href='<%# progressTitle(Eval("ArticleTitleEn")) + "-kh-" + Eval("ArticleID") + ".aspx" %>'
+                                        class="product-img box-img fullbox-img cover-img">
+                                        <img class="hideo" alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/article/" + Eval("ImageName") : "~/assets/images/hinh1.jpg" %>'
+                                            runat="server" /></a>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <span runat="server" id="itemPlaceholder" />
+                        </LayoutTemplate>
+                    </asp:ListView>
+                    <asp:ObjectDataSource ID="odsParner" runat="server" SelectMethod="ArticleSelectAll"
+                        TypeName="TLLib.Article">
+                        <SelectParameters>
+                            <asp:Parameter Name="StartRowIndex" Type="String" />
+                            <asp:Parameter Name="EndRowIndex" Type="String" />
+                            <asp:Parameter Name="Keyword" Type="String" />
+                            <asp:Parameter Name="ArticleTitle" Type="String" />
+                            <asp:Parameter Name="Description" Type="String" />
+                            <asp:Parameter DefaultValue="3" Name="ArticleCategoryID" Type="String" />
+                            <asp:Parameter Name="Tag" Type="String" />
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                            <asp:Parameter Name="IsHot" Type="String" />
+                            <asp:Parameter Name="IsNew" Type="String" />
+                            <asp:Parameter Name="FromDate" Type="String" />
+                            <asp:Parameter Name="ToDate" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
+                            <asp:Parameter Name="Priority" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+

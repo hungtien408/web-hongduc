@@ -53,7 +53,7 @@ public partial class goi_hang : System.Web.UI.Page
             {
                 //send email         
                 sendEmail();
-                Common.ShowAlert("Cám ơn bạn đã đăng ký với chúng tôi. Thông báo của bạn đã được gửi đi. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất!");
+                Common.ShowAlert("Thanks you for your contacting with us. We will reply your request as soon as we can!");
 
                 txtFirstName.Text = "";
                 txtLastName.Text = "";
@@ -68,7 +68,7 @@ public partial class goi_hang : System.Web.UI.Page
         }
         else
         {
-            Common.ShowAlert("Bạn chưa nhập file đính kèm!");
+            Common.ShowAlert("No attach file!");
         }
     }
     protected void btClear_Click(object sender, EventArgs e)

@@ -782,8 +782,9 @@ body .mobilep-right {
 .product-pos .product-name {
     text-align: center;
     font-size:18px;
+    line-height: 20px;
     color:#fff;
-    width:190px;
+    padding: 0 10px;
     margin:0 auto;
 }
 .product-pos .product-view {

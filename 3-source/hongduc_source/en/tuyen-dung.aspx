@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site-sub.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/en/site-sub.master" AutoEventWireup="true"
     CodeFile="tuyen-dung.aspx.cs" Inherits="tuyen_dung" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -7,10 +7,10 @@
     <div class="recruitment">
         <div class="rec-title">
             <p>
-                Hiện tại Hồng Đức Express đang tuyển các vị trí sau. Các ứng viên nộp hồ sơ qua
+                Search for jobs in HONG DUC EXPRESS. We look forward to receiving your application.
                 Email: tuyendung@hongducexpress.vn</p>
             <p>
-                <span>Ứng viên vui lòng gọi điện thoại đến công ty</span></p>
+                <span>Applicants please call the company</span></p>
         </div>
         <div class="panel-group" id="accordion">
             <asp:ListView ID="lstCareer" runat="server" DataSourceID="odsCareer" EnableModelValidation="True">
@@ -20,7 +20,7 @@
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                     href='<%# "#collapse" + Eval("CareerID") %>' aria-expanded="false" aria-controls='<%# "collapse" + Eval("CareerID") %>'>
-                                    <%# Eval("CareerTitle")%>
+                                    <%# Eval("CareerTitleEn")%>
                                     <span class="icon-plus"></span></a>
                             </h4>
                         </div>
@@ -28,12 +28,12 @@
                             aria-labelledby='<%# "heading" + Eval("CareerID") %>'>
                             <div class="panel-body">
                                 <div class="rec-content">
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Content") %>'></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("ContentEn") %>'></asp:Label>
                                 </div>
                                 <div class='<%# !string.IsNullOrEmpty("FilePath") ? "down-pfd" : "invisible" %>'>
                                     <a download href='<%# !string.IsNullOrEmpty("FilePath") ? "~/res/career/download/" + Eval("FilePath") : "" %>'
                                         runat="server">
-                                        <img src="assets/images/pdf.png" alt="" /></a>
+                                        <img src="../assets/images/pdf.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>

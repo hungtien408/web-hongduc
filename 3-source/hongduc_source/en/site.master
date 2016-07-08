@@ -10,14 +10,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
-    <link href="assets/styles/font-awesome.min.css" rel="stylesheet" />
-    <link href="assets/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/styles/uniform-base.css" rel="stylesheet" type="text/css" />
-    <link href="assets/styles/cloud-zoom.css" rel="stylesheet" />
-    <link href="assets/styles/slick.css" rel="stylesheet" />
-    <link href="assets/styles/jquery.bxslider.css" rel="stylesheet" />
-    <link href="assets/styles/site.css" rel="stylesheet" type="text/css" />
-    <link href="assets/styles/site-repond.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="../assets/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/styles/uniform-base.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/styles/cloud-zoom.css" rel="stylesheet" />
+    <link href="../assets/styles/slick.css" rel="stylesheet" />
+    <link href="../assets/styles/jquery.bxslider.css" rel="stylesheet" />
+    <link href="../assets/styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/styles/site-repond.css" rel="stylesheet" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 8]>
@@ -39,9 +39,9 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js" type="text/javascript"></script>
     <![endif]-->
-    <script src="assets/js/jquery.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.easing.1.3.js" type="text/javascript"></script>
-    <script src="assets/js/hoverIntent.js"></script>
+    <script src="../assets/js/jquery.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="../assets/js/hoverIntent.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <!--active menu-->
@@ -73,8 +73,8 @@
                         <div class="row">
                             <div class="col-xs-6">
                                 <div class="logo">
-                                    <a id="A1" href="~/" runat="server">
-                                        <img class="img-responsive" src="assets/images/logo.png" alt="logo" /></a>
+                                    <a id="A1" href="~/en/" runat="server">
+                                        <img class="img-responsive" src="../assets/images/logo.png" alt="logo" /></a>
                                 </div>
                             </div>
                             <div class="col-xs-6 hotline-w">
@@ -85,8 +85,7 @@
                                         <span>0975 17 17 96</span><asp:ImageButton ID="btnVN" runat="server" ImageUrl="~/assets/images/icon1.png"
                                     OnClick="btnVN_Click" />
                                 <asp:ImageButton ID="btnEN" runat="server" ImageUrl="~/assets/images/icon2.png"
-                                    OnClick="btnEN_Click" /><%--<a href="#"><img src="assets/images/icon1.png" /></a><a
-                                            href="#"><img src="assets/images/icon2.png" /></a>--%></p>
+                                    OnClick="btnEN_Click" /></p>
                                 </div>
                             </div>
                         </div>
@@ -100,22 +99,22 @@
                             <span class="fa fa-reorder"></span>Menu</a>
                         <ul id="menu" class="desktop-992">
                             <li class="home"><a href="Default.aspx"><span class="fa fa-home"></span></a></li>
-                            <li><a href="gioi-thieu.aspx">thông tin công ty</a></li>
-                            <li><a href="javascript:void(0);">Hậu cần</a>
+                            <li><a href="gioi-thieu.aspx">About Us</a></li>
+                            <li><a href="javascript:void(0);">Logistics</a>
                                 <asp:ListView ID="lstLogisticsCategory" runat="server" DataSourceID="odsLogisticsCategory"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li class="width50 sub1"><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'>
-                                            <%# Eval("ArticleCategoryName") %></a>
+                                        <li class="width50 sub1"><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'>
+                                            <%# Eval("ArticleCategoryNameEn")%></a>
                                             <asp:HiddenField ID="hdnLogisticsCategorySub" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                             <asp:ListView ID="lstLogisticsCategorySub" runat="server" DataSourceID="odsLogisticsCategorySub"
                                                 EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'><%# Eval("ArticleCategoryName") %></a>
+                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'><%# Eval("ArticleCategoryNameEn")%></a>
                                                     <asp:HiddenField ID="hdnLogisticsCategory" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                                     <asp:ListView ID="lstLogistics" runat="server" DataSourceID="odsLogistics" EnableModelValidation="True">
                                                         <ItemTemplate>
-                                                            <a class="sub3" href='<%# progressTitle(Eval("ArticleTitle")) + "-hc-" + Eval("ArticleID") + ".aspx" %>'><%# Eval("ArticleTitle")%></a>
+                                                            <a class="sub3" href='<%# progressTitle(Eval("ArticleTitleEn")) + "-hc-" + Eval("ArticleID") + ".aspx" %>'><%# Eval("ArticleTitleEn")%></a>
                                                         </ItemTemplate>
                                                         <LayoutTemplate>
                                                             <span runat="server" id="itemPlaceholder" />
@@ -177,18 +176,18 @@
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
                             </li>
-                            <li><a href="javascript:void(0);">chuyển phát nhanh</a>
+                            <li><a href="javascript:void(0);">Express</a>
                                 <asp:ListView ID="lstExpressCategory" runat="server" DataSourceID="odsExpressCategory"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
                                         <li class="sub1"><a href="javascript:void(0);">
-                                            <%# Eval("ArticleCategoryName") %></a>
+                                            <%# Eval("ArticleCategoryNameEn")%></a>
                                             <asp:HiddenField ID="hdnExpressCategory" Value='<%# Eval("ArticleCategoryID") %>'
                                                 runat="server" />
                                             <asp:ListView ID="lstExpress" runat="server" DataSourceID="odsExpress" EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitle")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
-                                                        <%# Eval("ArticleTitle") %></a>
+                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitleEn")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
+                                                        <%# Eval("ArticleTitleEn")%></a>
                                                 </ItemTemplate>
                                                 <LayoutTemplate>
                                                     <div class="sub-bg">
@@ -235,21 +234,21 @@
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
                             </li>
-                            <li><a href="javascript:void(0);">thương mại</a>
+                            <li><a href="javascript:void(0);">Commerce</a>
                                 <ul class="menu-sub bg3">
                                     <li>
                                         <div class="sub-bg">
                                             <asp:ListView ID="lstCommerceCategory" runat="server" DataSourceID="odsCommerceCategory"
                                                 EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-tmi-" + Eval("ArticleCategoryID") + ".aspx" %>'>
-                                                        <%# Eval("ArticleCategoryName") %></a>
+                                                    <a class="sub2" href='<%# string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-tmi-" + Eval("ArticleCategoryID") + ".aspx" %>'>
+                                                        <%# Eval("ArticleCategoryNameEn")%></a>
                                                     <asp:HiddenField ID="hdnCommerceCategory" Value='<%# Eval("ArticleCategoryID") %>'
                                                         runat="server" />
                                                     <asp:ListView ID="lstCommerce" runat="server" DataSourceID="odsCommerce" EnableModelValidation="True">
                                                         <ItemTemplate>
-                                                            <a class="sub3" href='<%# progressTitle(Eval("ArticleTitle")) + "-tm-" + Eval("ArticleID") + ".aspx" %>'>
-                                                                <%# Eval("ArticleTitle") %></a>
+                                                            <a class="sub3" href='<%# progressTitle(Eval("ArticleTitleEn")) + "-tm-" + Eval("ArticleID") + ".aspx" %>'>
+                                                                <%# Eval("ArticleTitleEn")%></a>
                                                         </ItemTemplate>
                                                         <LayoutTemplate>
                                                             <span runat="server" id="itemPlaceholder" />
@@ -294,14 +293,14 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="khach-hang.aspx">khách hàng</a></li>
-                            <li><a href="tin-tuc.aspx">tin tức</a></li>
-                            <li><a href="tuyen-dung.aspx">tuyển dụng</a></li>
+                            <li><a href="khach-hang.aspx">Customers</a></li>
+                            <li><a href="tin-tuc.aspx">News</a></li>
+                            <li><a href="tuyen-dung.aspx">Career</a></li>
                         </ul>
                         <div class="form-search corner">
                             <asp:Button ID="Button1" CssClass="search-btn" runat="server" Text="" />
                             <div class="search-input">
-                                <asp:TextBox ID="TextBox1" CssClass="search-text" runat="server" placeholder="Tìm kiếm"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" CssClass="search-text" runat="server" placeholder="Search"></asp:TextBox>
                             </div>
                         </div>
                         <div class="clearfix">
@@ -328,8 +327,8 @@
                                     <h4>
                                         hong duc express co., ltd</h4>
                                     <ul class="list-address">
-                                        <li><span class="fa fa-map-marker"></span>Phòng 408, lầu 04, tòa nhà Hải Âu - 39B Trường
-                                            Sơn, P. 4, Q. Tân Bình, Tp.HCM</li>
+                                        <li><span class="fa fa-map-marker"></span>Room 408, 4th Floor , Hải Âu Tower - 39B Trường
+                                            Sơn Str., Ward 4, Tân Bình District, HCMC</li>
                                         <li><span class="fa fa-phone"></span>0975 17 17 96</li>
                                     </ul>
                                 </div>
@@ -338,14 +337,14 @@
                                 <div class="copyright-bg">
                                     <div class="follow">
                                         <span>Follow us on</span> <a href="#">
-                                            <img src="assets/images/follow1.png" /></a> <a href="#">
-                                                <img src="assets/images/follow2.png" /></a> <a href="#">
-                                                    <img src="assets/images/follow3.png" /></a> <a href="#">
-                                                        <img src="assets/images/follow4.png" /></a>
+                                            <img src="../assets/images/follow1.png" /></a> <a href="#">
+                                                <img src="../assets/images/follow2.png" /></a> <a href="#">
+                                                    <img src="../assets/images/follow3.png" /></a> <a href="#">
+                                                        <img src="../assets/images/follow4.png" /></a>
                                     </div>
                                     <div class="copyright">
                                         <p>
-                                            &copy; 2016 Bản quyền thuộc về HongDuc Express</p>
+                                            &copy; 2016 HongDuc Express. All Rights Reserved </p>
                                         <p>
                                             <a target="_blank" href="http://www.tranlegroup.com">Thiết kế web </a><a target="_blank"
                                                 href="http://www.tranlegroup.com">Trần Lê</a></p>
@@ -365,11 +364,11 @@
             <div class="menu-in">
                 <div class="menu-mobile">
                     <div class="logo">
-                        <a id="A2" href="~/" runat="server">
-                            <img class="img-responsive" src="assets/images/logo.png" alt="logo" /></a>
+                        <a id="A2" href="~/en/" runat="server">
+                            <img class="img-responsive" src="../assets/images/logo.png" alt="logo" /></a>
                     </div>
                     <ul id="menuMobile" class="menu-nav">
-                        <li class="home"><a id="A3" href="~/" runat="server">Trang chủ</a></li>
+                        <li class="home"><a id="A3" href="~/" runat="server">Home</a></li>
                     </ul>
                 </div>
             </div>
@@ -384,19 +383,19 @@
             Please upgrade IE 8+, Download <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
                 here</a></div>
     </div>
-    <script src="assets/js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.uniform.min.js" type="text/javascript"></script>
-    <script src="assets/js/isotope.pkgd.min.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.panel.mobile.js" type="text/javascript"></script>
-    <script src="assets/js/superfish.js"></script>
-    <script src="assets/js/jquery.textheight.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.bgbox.js" type="text/javascript"></script>
-    <script src="assets/js/cloud-zoom.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/jquery.bxslider.min.js"></script>
-    <script src="assets/js/jquery.menu.level.js"></script>
-    <script src="assets/js/jquery.main.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+    <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="../assets/js/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.panel.mobile.js" type="text/javascript"></script>
+    <script src="../assets/js/superfish.js"></script>
+    <script src="../assets/js/jquery.textheight.js" type="text/javascript"></script>
+    <script src="../assets/js/jquery.bgbox.js" type="text/javascript"></script>
+    <script src="../assets/js/cloud-zoom.js"></script>
+    <script src="../assets/js/slick.min.js"></script>
+    <script src="../assets/js/jquery.bxslider.min.js"></script>
+    <script src="../assets/js/jquery.menu.level.js"></script>
+    <script src="../assets/js/jquery.main.js"></script>
     </form>
 </body>
 </html>

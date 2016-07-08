@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site-sub.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/en/site-sub.master" AutoEventWireup="true"
     CodeFile="goi-hang.aspx.cs" Inherits="goi_hang" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -13,7 +13,7 @@
                         <ItemTemplate>
                             <div class="aside-title">
                                 <a href="javascript:void(0);">
-                                    <%# Eval("ArticleCategoryName") %></a>
+                                    <%# Eval("ArticleCategoryNameEn")%></a>
                             </div>
                             <div class="aside-list">
                                 <%--<asp:HiddenField ID="hdnCategoryID3" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />--%>
@@ -21,9 +21,9 @@
                                     Visible="False"></asp:Label>
                                 <asp:ListView ID="lstExpress3" runat="server" DataSourceID="odsExpress3" EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitle")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
+                                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ArticleLink").ToString()) ? Eval("ArticleLink") : progressTitle(Eval("ArticleTitleEn")) + "-cp-" + Eval("ArticleID") + ".aspx" %>'>
                                             <span class="fa fa-circle"></span>
-                                            <%# Eval("ArticleTitle") %></a> </li>
+                                            <%# Eval("ArticleTitleEn")%></a> </li>
                                     </ItemTemplate>
                                     <LayoutTemplate>
                                         <ul>
@@ -93,10 +93,10 @@
         </div>
         <div class="col-md-9">
             <div class="formpage">
-                <h3>Gởi hàng</h3>
+                <h3>Shipping</h3>
                 <div class="dropdown section">
                     <label for="Title">
-                        Chức danh</label>
+                        Title</label>
                     <%--<select name="Title" id="Title"><option value=""></option>
                             <option value="Ông">Ông</option>
                             <option value="Cô">Cô</option>
@@ -104,13 +104,14 @@
                             <option value="Tiến sĩ">Tiến sĩ</option>
                         </select>--%>
                     <asp:DropDownList ID="dropChucDanh" runat="server">
-                        <asp:ListItem Value="Ông">Ông</asp:ListItem>
-                        <asp:ListItem Value="Bà">Bà</asp:ListItem>
+                        <asp:ListItem Value="Mr">Mr</asp:ListItem>
+                        <asp:ListItem Value="Ms">Ms</asp:ListItem>
+                        <asp:ListItem Value="Mrs">Mrs</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="text section">
                     <label for="First_Name">
-                        Tên *</label>
+                        First Name *</label>
                     <asp:TextBox ID="txtFirstName" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtFirstName"
@@ -118,7 +119,7 @@
                 </div>
                 <div class="text section">
                     <label for="Last_Name">
-                        Họ *</label>
+                        Last Name *</label>
                     <asp:TextBox ID="txtLastName" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator2" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtLastName"
@@ -126,7 +127,7 @@
                 </div>
                 <div class="text section">
                     <label for="Job_Title">
-                        Chức vụ *</label>
+                        Job Title *</label>
                     <asp:TextBox ID="txtJobs" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtJobs" ErrorMessage="Information required!"
@@ -134,7 +135,7 @@
                 </div>
                 <div class="text section">
                     <label for="Company_Name">
-                        Tên công ty *</label>
+                        Company Name *</label>
                     <asp:TextBox ID="txtCompanyName" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtCompanyName"
@@ -142,7 +143,7 @@
                 </div>
                 <div class="text section">
                     <label for="city">
-                        Thành phố *</label>
+                        City *</label>
                     <asp:TextBox ID="txtCity" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator5" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtCity" ErrorMessage="Information required!"
@@ -150,7 +151,7 @@
                 </div>
                 <div class="text section">
                     <label for="zip_code">
-                        Mã bưu điện *</label>
+                        Zip Code *</label>
                     <asp:TextBox ID="txtZipCode" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator6" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtZipCode"
@@ -158,7 +159,7 @@
                 </div>
                 <div class="text section">
                     <label for="Email_Address">
-                        Địa chỉ email *</label>
+                        Email *</label>
                     <asp:TextBox ID="txtEmail" CssClass="maxfield" runat="server"></asp:TextBox>
                     <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
                         runat="server" ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Email is error!"
@@ -170,7 +171,7 @@
                 </div>
                 <div class="text section">
                     <label for="Telephone_Number">
-                        Số điện thoại *</label>
+                        Phone *</label>
                     <asp:TextBox ID="txtPhone" runat="server" CssClass="maxfield"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator8" runat="server"
                         Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtPhone" ErrorMessage="Information required!"
@@ -178,7 +179,7 @@
                 </div>
                 <div class="text section">
                     <label for="Your_Enquiry">
-                        Yêu cầu của quý khách *</label>
+                        Your Enquiry *</label>
                     <asp:TextBox ID="txtContent" runat="server" TextMode="MultiLine" cols="45" Rows="2"
                         CssClass="form-area"></asp:TextBox>
                     <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator9" runat="server"
@@ -187,16 +188,16 @@
                 </div>
                 <div class="section upload">
                     <label for="Relevant_Documents">
-                        Vui lòng đính kèm các tài liệu liên quan đến yêu cầu của quý vị khách:</label>
+                        Please attach any relevant documents for your enquiry:</label>
                     <asp:FileUpload ID="FileUpload1" CssClass="fileupload" runat="server" />
                     <%--<asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator10" runat="server"
                         Display="None" ValidationGroup="SendEmail" ControlToValidate="FileUpload1" ErrorMessage="File upload: Information required!"
                         ForeColor="Red"></asp:RequiredFieldValidator>--%>
                 </div>
                 <div class="section end">
-                    <asp:Button ID="btnClear" CssClass="formbutton" runat="server" Text="Xoá mẫu" ValidationGroup="SendEmail"
+                    <asp:Button ID="btnClear" CssClass="formbutton" runat="server" Text="Clear form" ValidationGroup="SendEmail"
                         OnClick="btClear_Click" />
-                    <asp:Button ID="btnSend" CssClass="submitbutton" runat="server" Text="Nộp" ValidationGroup="SendEmail"
+                    <asp:Button ID="btnSend" CssClass="submitbutton" runat="server" Text="Submit" ValidationGroup="SendEmail"
                         OnClick="btSend_Click" />
                 </div>
             </div>

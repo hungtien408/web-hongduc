@@ -12,8 +12,8 @@ public partial class lien_he : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Page.Title = "Liên Hệ";
-        var meta = new HtmlMeta() { Name = "description", Content = "Liên Hệ" };
+        Page.Title = "Contact";
+        var meta = new HtmlMeta() { Name = "description", Content = "Contact" };
         Header.Controls.Add(meta);
     }
     private void sendEmail()
@@ -22,7 +22,7 @@ public partial class lien_he : System.Web.UI.Page
         msg += "<b>Full name: </b>" + txtFullName.Text.Trim().ToString() + "<br />";
         msg += "<b>Email: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
         msg += "<b>Phone: </b>" + txtPhone.Text.Trim().ToString() + "<br />";
-        msg += "<b>Lời nhắn: </b>" + txtContent.Text.Trim().ToString();
+        msg += "<b>Message: </b>" + txtContent.Text.Trim().ToString();
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "thanh.le@hongducexpress.com", "", "Contact HONG DUC EXPRESS", msg, true);
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "hung.nguyen@hongducexpress.com", "", "Contact HONG DUC EXPRESS", msg, true);
     }
@@ -35,7 +35,7 @@ public partial class lien_he : System.Web.UI.Page
 
                 //send email         
                 sendEmail();
-                ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime", " $(document).ready(function () {alert('Cám ơn bạn đã liên lạc với chúng tôi. Thông báo của bạn đã được gửi đi. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất!')});", true);
+                ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime", " $(document).ready(function () {alert('Thanks you for your contacting with us. We will reply your request as soon as we can!')});", true);
                 //lblMessage.Text = "Cám ơn bạn đã liên lạc với chúng tôi. Thông báo của bạn đã được gửi đi. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất!";
                 //lblMessage.Visible = true;
                 //lblMessage.Text = "";
