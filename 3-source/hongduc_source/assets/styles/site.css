@@ -1280,4 +1280,11 @@ body .mobilep-right {
 }
 .section.end {
     margin-top: 10px;
+    overflow: hidden;
+}
+.menu-mobile .menu-sub {
+    display:none;
+}
+.menu-mobile li:hover .menu-sub {
+    display:block;
 }
