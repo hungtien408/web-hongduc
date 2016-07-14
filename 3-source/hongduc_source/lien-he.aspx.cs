@@ -25,6 +25,8 @@ public partial class lien_he : System.Web.UI.Page
         msg += "<b>Lời nhắn: </b>" + txtContent.Text.Trim().ToString();
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "thanh.le@hongducexpress.com", "", "Contact HONG DUC EXPRESS", msg, true);
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "hung.nguyen@hongducexpress.com", "", "Contact HONG DUC EXPRESS", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "cc@tranlegroup.com", "", "Contact HONG DUC EXPRESS", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "hungtien408@gmail.com", "", "Contact HONG DUC EXPRESS", msg, true);
     }
     protected void btSend_Click(object sender, EventArgs e)
     {
