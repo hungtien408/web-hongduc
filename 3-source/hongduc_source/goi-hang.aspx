@@ -94,6 +94,21 @@
         <div class="col-md-9">
             <div class="formpage">
                 <h3>Gởi hàng</h3>
+                <div class="text section">
+                    <p>
+                        HỒNG ĐỨC EXPRESS - Với quy mô và kinh nghiệm trong ngành dịch vụ logistic cho phép chúng tôi điều chỉnh các giải pháp
+                        có tính cạnh tranh cao cho tất cả các khách hàng của chúng tôi.</p>
+                    <p>
+                        Cho dù bạn là một doanh nghiệp nhỏ đang tìm kiếm để vận chuyển ít hơn một xe tải
+                        hay là một công ty tiếp vận chuyên nghiệp đang tìm cách để hoàn thiện hoạt động
+                        vận chuyển hàng hóa của mình, chúng tôi sẽ cung cấp những dịch vụ dành riêng đến
+                        từ các chuyên gia trong lĩnh vực hoạt động của bạn.</p>
+                    <p>
+                        Chỉ việc đơn giản điền vào mẫu phiếu liên hệ dưới đây và một chuyên viên từ HỒNG ĐỨC EXPRESS
+                        sẽ đáp ứng kịp thời.</p>
+                    <p style="font-weight: bold;">
+                        Hoặc liên hệ chúng tôi theo số điện thoại: 0975 17 17 96</p>
+                </div>
                 <div class="dropdown section">
                     <label for="Title">
                         Chức danh</label>

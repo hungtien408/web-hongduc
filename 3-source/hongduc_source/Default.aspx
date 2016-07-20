@@ -54,13 +54,13 @@
                         <ItemTemplate>
                             <div class="col-sm-3 col-xs-6 element-item">
                                 <div class="product-box product-pos scale-animate">
-                                    <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>' class="product-img"><span class="box-img fullbox-img cover-img">
+                                    <a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx") %>' class="product-img"><span class="box-img fullbox-img cover-img">
                                         <img class="hideo"  alt='<%# Eval("ImageName") %>' src='<%# !string.IsNullOrEmpty(Eval("ImageName").ToString()) ? "~/res/articlecategory/" + Eval("ImageName") : "~/assets/images/img1.jpg" %>' runat="server" /></span></a>
                                     <div class="pro-name">
                                         <div class="product-name">
                                             <%# Eval("ArticleCategoryName").ToString().Substring(0, 1).Equals("-") ? Eval("ArticleCategoryName").ToString().Substring(1) : Eval("ArticleCategoryName") %></div>
                                         <div class="product-view">
-                                            <a href='<%# string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" %>'>XEM CHI TIẾT</a></div>
+                                            <a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("Content").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryName")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx") %>'>XEM CHI TIẾT</a></div>
                                     </div>
                                 </div>
                             </div>
