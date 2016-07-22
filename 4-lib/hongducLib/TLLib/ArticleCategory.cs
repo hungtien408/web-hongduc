@@ -76,6 +76,73 @@ namespace TLLib
             }
         }
 
+        public string ArticleCategoryInsert2(
+            string ArticleCategoryName,
+            string ArticleCategoryNameEn,
+            string ArticleCategoryLink,
+            string ArticleCategoryLinkEn,
+            string ConvertedArticleCategoryName,
+            string Description,
+            string DescriptionEn,
+            string Content,
+            string ContentEn,
+            string MetaTitle,
+            string MetaTitleEn,
+            string MetaDescription,
+            string MetaDescriptionEn,
+            string ImageName,
+            string ParentID,
+            string IsShowOnMenu,
+            string IsShowOnHomePage,
+            string IsAvailable
+        )
+        {
+            try
+            {
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ArticleCategory_Insert", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ArticleCategoryName", string.IsNullOrEmpty(ArticleCategoryName) ? dbNULL : (object)ArticleCategoryName);
+                cmd.Parameters.AddWithValue("@ArticleCategoryNameEn", string.IsNullOrEmpty(ArticleCategoryNameEn) ? dbNULL : (object)ArticleCategoryNameEn);
+                cmd.Parameters.AddWithValue("@ArticleCategoryLink", string.IsNullOrEmpty(ArticleCategoryLink) ? dbNULL : (object)ArticleCategoryLink);
+                cmd.Parameters.AddWithValue("@ArticleCategoryLinkEn", string.IsNullOrEmpty(ArticleCategoryLinkEn) ? dbNULL : (object)ArticleCategoryLinkEn);
+                cmd.Parameters.AddWithValue("@ConvertedArticleCategoryName", string.IsNullOrEmpty(ConvertedArticleCategoryName) ? dbNULL : (object)ConvertedArticleCategoryName);
+                cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
+                cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
+                cmd.Parameters.AddWithValue("@Content", string.IsNullOrEmpty(Content) ? dbNULL : (object)Content);
+                cmd.Parameters.AddWithValue("@ContentEn", string.IsNullOrEmpty(ContentEn) ? dbNULL : (object)ContentEn);
+                cmd.Parameters.AddWithValue("@MetaTitle", string.IsNullOrEmpty(MetaTitle) ? dbNULL : (object)MetaTitle);
+                cmd.Parameters.AddWithValue("@MetaTitleEn", string.IsNullOrEmpty(MetaTitleEn) ? dbNULL : (object)MetaTitleEn);
+                cmd.Parameters.AddWithValue("@MetaDescription", string.IsNullOrEmpty(MetaDescription) ? dbNULL : (object)MetaDescription);
+                cmd.Parameters.AddWithValue("@MetaDescriptionEn", string.IsNullOrEmpty(MetaDescriptionEn) ? dbNULL : (object)MetaDescriptionEn);
+                cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
+                cmd.Parameters.AddWithValue("@ParentID", string.IsNullOrEmpty(ParentID) ? dbNULL : (object)ParentID);
+                cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
+                cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
+                cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
+
+                SqlParameter imageNameParam = new SqlParameter("@OutImageName", null);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                imageNameParam.Size = 100;
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = imageNameParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(imageNameParam);
+                cmd.Parameters.Add(errorCodeParam);
+                scon.Open();
+                cmd.ExecuteNonQuery();
+                scon.Close();
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ArticleCategory_Insert' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return imageNameParam.Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public int ArticleCategoryUpdate(
             string ArticleCategoryID,
             string ArticleCategoryName,
@@ -104,6 +171,71 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@ArticleCategoryID", string.IsNullOrEmpty(ArticleCategoryID) ? dbNULL : (object)ArticleCategoryID);
                 cmd.Parameters.AddWithValue("@ArticleCategoryName", string.IsNullOrEmpty(ArticleCategoryName) ? dbNULL : (object)ArticleCategoryName);
                 cmd.Parameters.AddWithValue("@ArticleCategoryNameEn", string.IsNullOrEmpty(ArticleCategoryNameEn) ? dbNULL : (object)ArticleCategoryNameEn);
+                cmd.Parameters.AddWithValue("@ConvertedArticleCategoryName", string.IsNullOrEmpty(ConvertedArticleCategoryName) ? dbNULL : (object)ConvertedArticleCategoryName);
+                cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
+                cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
+                cmd.Parameters.AddWithValue("@Content", string.IsNullOrEmpty(Content) ? dbNULL : (object)Content);
+                cmd.Parameters.AddWithValue("@ContentEn", string.IsNullOrEmpty(ContentEn) ? dbNULL : (object)ContentEn);
+                cmd.Parameters.AddWithValue("@MetaTitle", string.IsNullOrEmpty(MetaTitle) ? dbNULL : (object)MetaTitle);
+                cmd.Parameters.AddWithValue("@MetaTitleEn", string.IsNullOrEmpty(MetaTitleEn) ? dbNULL : (object)MetaTitleEn);
+                cmd.Parameters.AddWithValue("@MetaDescription", string.IsNullOrEmpty(MetaDescription) ? dbNULL : (object)MetaDescription);
+                cmd.Parameters.AddWithValue("@MetaDescriptionEn", string.IsNullOrEmpty(MetaDescriptionEn) ? dbNULL : (object)MetaDescriptionEn);
+                cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
+                cmd.Parameters.AddWithValue("@ParentID", string.IsNullOrEmpty(ParentID) ? dbNULL : (object)ParentID);
+                cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
+                cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
+                cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                scon.Open();
+                int success = cmd.ExecuteNonQuery();
+                scon.Close();
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ArticleCategory_Update' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                return success;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public int ArticleCategoryUpdate2(
+            string ArticleCategoryID,
+            string ArticleCategoryName,
+            string ArticleCategoryNameEn,
+            string ArticleCategoryLink,
+            string ArticleCategoryLinkEn,
+            string ConvertedArticleCategoryName,
+            string Description,
+            string DescriptionEn,
+            string Content,
+            string ContentEn,
+            string MetaTitle,
+            string MetaTitleEn,
+            string MetaDescription,
+            string MetaDescriptionEn,
+            string ImageName,
+            string ParentID,
+            string IsShowOnMenu,
+            string IsShowOnHomePage,
+            string IsAvailable
+        )
+        {
+            try
+            {
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ArticleCategory_Update", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ArticleCategoryID", string.IsNullOrEmpty(ArticleCategoryID) ? dbNULL : (object)ArticleCategoryID);
+                cmd.Parameters.AddWithValue("@ArticleCategoryName", string.IsNullOrEmpty(ArticleCategoryName) ? dbNULL : (object)ArticleCategoryName);
+                cmd.Parameters.AddWithValue("@ArticleCategoryNameEn", string.IsNullOrEmpty(ArticleCategoryNameEn) ? dbNULL : (object)ArticleCategoryNameEn);
+                cmd.Parameters.AddWithValue("@ArticleCategoryLink", string.IsNullOrEmpty(ArticleCategoryLink) ? dbNULL : (object)ArticleCategoryLink);
+                cmd.Parameters.AddWithValue("@ArticleCategoryLinkEn", string.IsNullOrEmpty(ArticleCategoryLinkEn) ? dbNULL : (object)ArticleCategoryLinkEn);
                 cmd.Parameters.AddWithValue("@ConvertedArticleCategoryName", string.IsNullOrEmpty(ConvertedArticleCategoryName) ? dbNULL : (object)ConvertedArticleCategoryName);
                 cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
@@ -284,6 +416,40 @@ namespace TLLib
                 oCommon.RecursiveFillTree1(dt, parentID, "ParentID", "ArticleCategoryName", "ArticleCategoryID", increaseLevelCount, IsShowOnMenu, IsShowOnHomePage, "-");
 
                 return oCommon.Tree;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public DataTable ArticleCategorySelectAll2(string parentID, string IsShowOnMenu, string IsShowOnHomePage)
+        {
+            try
+            {
+                var dt = new DataTable();
+                var scon = new SqlConnection(connectionString);
+                var cmd = new SqlCommand("usp_ArticleCategory2_SelectAll", scon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@parentID", string.IsNullOrEmpty(parentID) ? dbNULL : (object)parentID);
+                cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
+                cmd.Parameters.AddWithValue("@IsShowOnHomePage", string.IsNullOrEmpty(IsShowOnHomePage) ? dbNULL : (object)IsShowOnHomePage);
+                SqlParameter errorCodeParam = new SqlParameter("@ErrorCode", null);
+                errorCodeParam.Size = 4;
+                errorCodeParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(errorCodeParam);
+                var sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (errorCodeParam.Value.ToString() != "0")
+                    throw new Exception("Stored Procedure 'usp_ArticleCategory2_SelectAll' reported the ErrorCode : " + errorCodeParam.Value.ToString());
+
+                //Common oCommon = new Common();
+
+                ////oCommon.RecursiveFillTree(dt, parentID, "ParentID", "ArticleCategoryName", "ArticleCategoryID", increaseLevelCount, IsShowOnMenu, IsShowOnHomePage);
+                //oCommon.RecursiveFillTree2(dt, parentID, "ParentID", "ArticleCategoryName", "ArticleCategoryID", increaseLevelCount, IsShowOnMenu, IsShowOnHomePage, "-");
+
+                return dt;
             }
             catch (Exception ex)
             {

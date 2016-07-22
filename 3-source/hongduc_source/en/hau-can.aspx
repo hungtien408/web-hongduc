@@ -70,7 +70,7 @@
                                         <asp:ControlParameter ControlID="hdnCategoryID" Name="parentID" PropertyName="Value"
                                             Type="Int32" />
                                         <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                                        <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                                        <asp:Parameter DefaultValue="True" Name="IsShowOnMenu" Type="String" />
                                         <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                     </SelectParameters>
                                 </asp:ObjectDataSource>
@@ -85,7 +85,7 @@
                         <SelectParameters>
                             <asp:Parameter DefaultValue="6" Name="parentID" Type="Int32" />
                             <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
-                            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+                            <asp:Parameter DefaultValue="True" Name="IsShowOnMenu" Type="String" />
                             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                         </SelectParameters>
                     </asp:ObjectDataSource>

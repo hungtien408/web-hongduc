@@ -69,11 +69,11 @@
                             <span runat="server" id="itemPlaceholder" />
                         </LayoutTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="odsLogisticsCategory" runat="server" SelectMethod="ArticleCategorySelectAll"
+                    <asp:ObjectDataSource ID="odsLogisticsCategory" runat="server" SelectMethod="ArticleCategorySelectAll2"
                         TypeName="TLLib.ArticleCategory">
                         <SelectParameters>
-                            <asp:Parameter DefaultValue="6" Name="parentID" Type="Int32" />
-                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32" />
+                            <asp:Parameter DefaultValue="25" Name="parentID" Type="String" />
+                            <%--<asp:Parameter DefaultValue="3" Name="increaseLevelCount" Type="Int32" />--%>
                             <asp:Parameter Name="IsShowOnMenu" Type="String" />
                             <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
                         </SelectParameters>
