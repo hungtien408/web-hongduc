@@ -160,18 +160,18 @@
                     </asp:GridClientSelectColumn>
                     <asp:GridTemplateColumn DataField="ArticleCategoryName" HeaderText="Tên danh mục">
                         <ItemTemplate>
-                            <%--<div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>--%>
+                            <div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>
                                 <asp:Label ID="lblArticleCategoryName" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
                                     Text='<%# Eval("ArticleCategoryName")%>'></asp:Label>
-                            <%--</div>--%>
+                            </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn DataField="ArticleCategoryNameEn" HeaderText="Tên danh mục(Tiếng Anh)">
                         <ItemTemplate>
-                            <%--<div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>--%>
+                            <div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>
                                 <asp:Label ID="lblArticleCategoryNameEn" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
                                     Text='<%# Eval("ArticleCategoryNameEn")%>'></asp:Label>
-                            <%--</div>--%>
+                            </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
                     <asp:GridBoundColumn DataField="ArticleCategoryID" HeaderText="ID" SortExpression="ArticleCategoryID">
@@ -189,12 +189,12 @@
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="10px" />
                     </asp:GridTemplateColumn>
-                    <%--<asp:GridTemplateColumn DataField="Level" HeaderText="Cấp độ">
+                    <asp:GridTemplateColumn DataField="Level" HeaderText="Cấp độ">
                         <ItemTemplate>
                             <asp:Label ID="lblLevel" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
                                 Text='<%# Eval("Level") %>'></asp:Label>
                         </ItemTemplate>
-                    </asp:GridTemplateColumn>--%>
+                    </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn DataField="ParentCategoryName" HeaderText="Danh mục cấp trên">
                         <ItemTemplate>
                             <asp:Label ID="lblParentCategoryName" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
@@ -301,12 +301,12 @@
                                         Tên danh mục
                                     </td>
                                     <td>
-                                        <%--<asp:RadTextBox ID="txtArticleCategoryName" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : (string.IsNullOrEmpty(Eval("ArticleCategoryName").ToString()) ? "" : Eval("ArticleCategoryName").ToString().Remove(0, Convert.ToInt32(Eval("Level")))) %>'
-                                            Width="500px" EmptyMessage="Tên danh mục...">
-                                        </asp:RadTextBox>--%>
-                                        <asp:RadTextBox ID="txtArticleCategoryName" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : (string.IsNullOrEmpty(Eval("ArticleCategoryName").ToString()) ? "" : Eval("ArticleCategoryName").ToString()) %>'
+                                        <asp:RadTextBox ID="txtArticleCategoryName" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : (string.IsNullOrEmpty(Eval("ArticleCategoryName").ToString()) ? "" : Eval("ArticleCategoryName").ToString().Remove(0, Convert.ToInt32(Eval("Level")))) %>'
                                             Width="500px" EmptyMessage="Tên danh mục...">
                                         </asp:RadTextBox>
+                                        <%--<asp:RadTextBox ID="txtArticleCategoryName" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : (string.IsNullOrEmpty(Eval("ArticleCategoryName").ToString()) ? "" : Eval("ArticleCategoryName").ToString()) %>'
+                                            Width="500px" EmptyMessage="Tên danh mục...">
+                                        </asp:RadTextBox>--%>
                                     </td>
                                 </tr>
                                 <tr>
@@ -489,7 +489,7 @@
         </asp:RadGrid>
     </asp:RadAjaxPanel>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="ArticleCategoryDelete"
-        SelectMethod="ArticleCategorySelectAll2" TypeName="TLLib.ArticleCategory" UpdateMethod="ArticleCategoryUpdate2"
+        SelectMethod="ArticleCategorySelectAll" TypeName="TLLib.ArticleCategory" UpdateMethod="ArticleCategoryUpdate2"
         InsertMethod="ArticleCategoryInsert2">
         <DeleteParameters>
             <asp:Parameter Name="ArticleCategoryID" Type="String" />
@@ -515,7 +515,8 @@
             <asp:Parameter Name="IsAvailable" Type="String" />
         </InsertParameters>
         <SelectParameters>
-            <asp:Parameter DefaultValue="25" Name="parentID" Type="String" />
+            <asp:Parameter DefaultValue="25" Name="parentID" Type="Int32" />
+            <asp:Parameter DefaultValue="3" Name="increaseLevelCount" Type="Int32" />
             <asp:Parameter Name="IsShowOnMenu" Type="String" />
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
         </SelectParameters>
