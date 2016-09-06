@@ -104,13 +104,13 @@
                                 <asp:ListView ID="lstLogisticsCategory" runat="server" DataSourceID="odsLogisticsCategory"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li class="width50 sub1"><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'>
+                                        <li class="width50 sub1"><a href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLinkEn").ToString()) ? Eval("ArticleCategoryLinkEn") : (string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'>
                                             <%# Eval("ArticleCategoryNameEn")%></a>
                                             <asp:HiddenField ID="hdnLogisticsCategorySub" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                             <asp:ListView ID="lstLogisticsCategorySub" runat="server" DataSourceID="odsLogisticsCategorySub"
                                                 EnableModelValidation="True">
                                                 <ItemTemplate>
-                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLink").ToString()) ? Eval("ArticleCategoryLink") : (string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'><%# Eval("ArticleCategoryNameEn")%></a>
+                                                    <a class="sub2" href='<%# !string.IsNullOrEmpty(Eval("ArticleCategoryLinkEn").ToString()) ? Eval("ArticleCategoryLinkEn") : (string.IsNullOrEmpty(Eval("ContentEn").ToString()) ? "javascript:void(0);" : progressTitle(Eval("ArticleCategoryNameEn")) + "-hci-" + Eval("ArticleCategoryID") + ".aspx" ) %>'><%# Eval("ArticleCategoryNameEn")%></a>
                                                     <asp:HiddenField ID="hdnLogisticsCategory" Value='<%# Eval("ArticleCategoryID") %>' runat="server" />
                                                     <asp:ListView ID="lstLogistics" runat="server" DataSourceID="odsLogistics" EnableModelValidation="True">
                                                         <ItemTemplate>
@@ -235,7 +235,7 @@
                                 </asp:ObjectDataSource>
                             </li>
                             <li><a href="javascript:void(0);">Commerce</a>
-                                <ul class="menu-sub bg3">
+                                <%--<ul class="menu-sub bg3">
                                     <li>
                                         <div class="sub-bg">
                                             <asp:ListView ID="lstCommerceCategory" runat="server" DataSourceID="odsCommerceCategory"
@@ -291,7 +291,7 @@
                                             </asp:ObjectDataSource>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul>--%>
                             </li>
                             <li><a href="khach-hang.aspx">Customers</a></li>
                             <li><a href="tin-tuc.aspx">News</a></li>

@@ -236,7 +236,7 @@
                                 </asp:ObjectDataSource>
                             </li>
                             <li><a href="javascript:void(0);">thương mại</a>
-                                <ul class="menu-sub bg3">
+                                <%--<ul class="menu-sub bg3">
                                     <li>
                                         <div class="sub-bg">
                                             <asp:ListView ID="lstCommerceCategory" runat="server" DataSourceID="odsCommerceCategory"
@@ -292,7 +292,7 @@
                                             </asp:ObjectDataSource>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul>--%>
                             </li>
                             <li><a href="khach-hang.aspx">khách hàng</a></li>
                             <li><a href="tin-tuc.aspx">tin tức</a></li>

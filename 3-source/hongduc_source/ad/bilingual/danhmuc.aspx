@@ -399,7 +399,7 @@
                                             Width="500px" EmptyMessage="Tên danh mục(En)..."></asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Link(En)
                                     </td>
