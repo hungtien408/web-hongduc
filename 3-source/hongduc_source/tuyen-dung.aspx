@@ -8,7 +8,7 @@
         <div class="rec-title">
             <p>
                 Hiện tại Hồng Đức Express đang tuyển các vị trí sau. Các ứng viên nộp hồ sơ qua
-                Email: tuyendung@hongducexpress.vn</p>
+                Email: tuyendung@hongducexpress.com</p>
             <p>
                 <span>Ứng viên vui lòng gọi điện thoại đến công ty</span></p>
         </div>
